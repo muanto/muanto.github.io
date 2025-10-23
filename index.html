@@ -1,7 +1,194 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>muanto.github.io</h1>
-<p>muanto.github.io is under construction</p>
-</body>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antonio Murolo | Frontend Developer</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="avatar-container">
+        <img
+          src="https://github.com/muanto.png"
+          alt="Foto di Antonio Murolo"
+          class="avatar"
+        />
+      </div>
+      <h1>Antonio Murolo</h1>
+      <p class="bio">
+        Sviluppatore di software esperto, le mie esperienze vanno
+        dall'automazione industriale allo sviluppo di app web e mobile.<br />
+        Specializzato sulle tecnologie frontend in particolare React.js e
+        Flutter.
+      </p>
+      <div class="skills-section">
+        <div class="skills-box">
+          <h3>Front-End</h3>
+          <ul class="skills-list">
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Web Components</li>
+            <li>React.js</li>
+            <li>Redux</li>
+            <li>styled-components</li>
+            <li>JSS</li>
+            <li>Jest</li>
+            <li>React Testing Library</li>
+            <li>Webpack</li>
+            <li>Next.js</li>
+            <li>Parcel.js</li>
+            <li>Flutter/Dart</li>
+            <li>Angular</li>
+            <li>HTML/HTML5</li>
+            <li>XHTML</li>
+            <li>XML</li>
+            <li>CSS/CSS3</li>
+            <li>SASS</li>
+            <li>LESS</li>
+            <li>Bootstrap</li>
+            <li>Tailwind</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Back-End</h3>
+          <ul class="skills-list">
+            <li>PHP (Slim3, Zend Framework)</li>
+            <li>Node.js (SSR)</li>
+            <li>Java (JSP/Servlet, Spring, Ibatis, GWT, JPA)</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Database</h3>
+          <ul class="skills-list">
+            <li>MySQL</li>
+            <li>Oracle PL/SQL</li>
+            <li>SQL Server</li>
+            <li>SQLite</li>
+            <li>Postgres</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Versioning</h3>
+          <ul class="skills-list">
+            <li>Git/GitHub</li>
+            <li>SVN</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Metodologie di lavoro</h3>
+          <ul class="skills-list">
+            <li>Agile (Scrum)</li>
+            <li>Jira</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Altre competenze</h3>
+          <ul class="skills-list">
+            <li>Objective C</li>
+            <li>C/C++</li>
+            <li>Audio/MIDI apps</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Sistemi Operativi</h3>
+          <ul class="skills-list">
+            <li>OSX</li>
+            <li>Windows</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Lingue</h3>
+          <ul class="skills-list">
+            <li>Inglese B1</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="repo-list" id="repo-list">
+        <!-- I progetti verranno inseriti qui -->
+      </div>
+    </section>
+    <footer>
+      &copy; 2025 Antonio Murolo · Powered by
+      <a
+        href="https://github.com/"
+        style="color: var(--accent); text-decoration: none"
+        >GitHub</a
+      >
+    </footer>
+    <script>
+      const GITHUB_USER = "muanto";
+      const repoList = document.getElementById("repo-list");
+      
+      // Funzione per mostrare un messaggio di errore
+      function showError(message) {
+        repoList.innerHTML = `
+          <div style="text-align: center; padding: 20px; color: var(--text-secondary);">
+            <p>⚠️ ${message}</p>
+          </div>
+        `;
+      }
+      
+      fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`)
+        .then((res) => {
+          // Controllo se la risposta è ok
+          if (!res.ok) {
+            throw new Error(`Errore HTTP: ${res.status} - ${res.statusText}`);
+          }
+          return res.json();
+        })
+        .then((repos) => {
+          // Controllo se repos è un array
+          if (!Array.isArray(repos)) {
+            throw new Error('Formato dati non valido ricevuto dall\'API');
+          }
+          
+          repoList.innerHTML = "";
+          const filteredRepos = repos.filter(
+            (r) =>
+              !r.fork && !r.private && r.name !== `${GITHUB_USER}.github.io`
+          );
+          
+          if (filteredRepos.length === 0) {
+            showError('Nessun repository pubblico trovato');
+            return;
+          }
+          
+          filteredRepos.forEach((repo) => {
+            const repoDiv = document.createElement("div");
+            repoDiv.className = "repo";
+
+            const repoLink = document.createElement("a");
+            repoLink.href = repo.html_url;
+            repoLink.className = "repo-title";
+            repoLink.target = "_blank";
+            repoLink.textContent = repo.name;
+
+            const repoDesc = document.createElement("p");
+            repoDesc.className = "repo-desc";
+            repoDesc.textContent = repo.description ? repo.description : "";
+
+            repoDiv.appendChild(repoLink);
+            repoDiv.appendChild(repoDesc);
+            repoList.appendChild(repoDiv);
+          });
+        })
+        .catch((error) => {
+          console.error('Errore nel caricamento dei repository:', error);
+          
+          // Gestione di diversi tipi di errore
+          if (error.name === 'TypeError' && error.message.includes('fetch')) {
+            showError('Impossibile connettersi a GitHub. Controlla la connessione internet.');
+          } else if (error.message.includes('HTTP')) {
+            showError(`Errore del server GitHub: ${error.message}`);
+          } else {
+            showError('Errore nel caricamento dei repository. Riprova più tardi.');
+          }
+        });
+    </script>
+  </body>
 </html>
