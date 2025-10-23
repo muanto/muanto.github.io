@@ -119,11 +119,22 @@
         repos
           .filter(r => !r.fork && !r.private && r.name !== `${GITHUB_USER}.github.io`)
           .forEach(repo => {
-            repoList.innerHTML += `
-              <div class="repo">
-                <a href="${repo.html_url}" class="repo-title" target="_blank">${repo.name}</a>
-                <p class="repo-desc">${repo.description ? repo.description : ''}</p>
-              </div>`;
+            const repoDiv = document.createElement('div');
+            repoDiv.className = 'repo';
+
+            const repoLink = document.createElement('a');
+            repoLink.href = repo.html_url;
+            repoLink.className = 'repo-title';
+            repoLink.target = '_blank';
+            repoLink.textContent = repo.name;
+
+            const repoDesc = document.createElement('p');
+            repoDesc.className = 'repo-desc';
+            repoDesc.textContent = repo.description ? repo.description : '';
+
+            repoDiv.appendChild(repoLink);
+            repoDiv.appendChild(repoDesc);
+            repoList.appendChild(repoDiv);
           });
       });
   </script>
