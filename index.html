@@ -1,7 +1,131 @@
-<!DOCTYPE html>
-<html>
+<<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Antonio Murolo | Frontend Developer</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
 <body>
-<h1>muanto.github.io</h1>
-<p>muanto.github.io is under construction</p>
+  <header>
+    <div class="avatar-container">
+      <img src="https://github.com/muanto.png" alt="Foto di Antonio Murolo" class="avatar">
+    </div>
+    <h1>Antonio Murolo</h1>
+    <p class="bio">
+      Sviluppatore di software esperto, le mie esperienze vanno dall'automazione industriale allo sviluppo di app web e mobile.<br>
+      Specializzato sulle tecnologie frontend in particolare ReactJs e Flutter.
+    </p>
+    <div class="skills-section">
+      <div class="skills-box">
+        <h3>Front-End</h3>
+        <ul class="skills-list">
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Web Components</li>
+          <li>React.js</li>
+          <li>Redux</li>
+          <li>styled-components</li>
+          <li>JSS</li>
+          <li>Jest</li>
+          <li>React Testing Library</li>
+          <li>Webpack</li>
+          <li>Next.js</li>
+          <li>Parcel.js</li>
+          <li>Flutter/Dart</li>
+          <li>Angular</li>
+          <li>HTML/HTML5</li>
+          <li>XHTML</li>
+          <li>XML</li>
+          <li>CSS/CSS3</li>
+          <li>SASS</li>
+          <li>LESS</li>
+          <li>Bootstrap</li>
+          <li>Tailwind</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Back-End</h3>
+        <ul class="skills-list">
+          <li>PHP (Slim3, Zend Framework)</li>
+          <li>Node.js (SSR)</li>
+          <li>Java (JSP/Servlet, Spring, Ibatis, GWT, JPA)</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Database</h3>
+        <ul class="skills-list">
+          <li>MySQL</li>
+          <li>Oracle PL/SQL</li>
+          <li>SQL Server</li>
+          <li>SQLite</li>
+          <li>Postgres</li>
+          <li>MongoDB</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Versioning</h3>
+        <ul class="skills-list">
+          <li>Git/GitHub</li>
+          <li>SVN</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Metodologie di lavoro</h3>
+        <ul class="skills-list">
+          <li>Agile (Scrum)</li>
+          <li>Jira</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Altre competenze</h3>
+        <ul class="skills-list">
+          <li>Objective C</li>
+          <li>C/C++</li>
+          <li>Audio/MIDI apps</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Sistemi Operativi</h3>
+        <ul class="skills-list">
+          <li>OSX</li>
+          <li>Windows</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Lingue</h3>
+        <ul class="skills-list">
+          <li>Inglese B1</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="repo-list" id="repo-list">
+      <!-- I progetti verranno inseriti qui -->
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 Antonio Murolo · Powered by <a href="https://github.com/" style="color:var(--accent);text-decoration:none;">GitHub</a>
+  </footer>
+  <script>
+    const GITHUB_USER = 'muanto';
+    const repoList = document.getElementById('repo-list');
+    fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated`)
+      .then(res => res.json())
+      .then(repos => {
+        repoList.innerHTML = '';
+        repos
+          .filter(r => !r.fork && !r.private && r.name !== `${GITHUB_USER}.github.io`)
+          .forEach(repo => {
+            repoList.innerHTML += `
+              <div class="repo">
+                <a href="${repo.html_url}" class="repo-title" target="_blank">${repo.name}</a>
+                <p class="repo-desc">${repo.description ? repo.description : ''}</p>
+              </div>`;
+          });
+      });
+  </script>
 </body>
 </html>
