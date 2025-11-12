@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antonio Murolo | Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000000",
+              secondary: "#151520",
+              accent: "#6b7280",
+              "accent-dark": "#4b5563",
+              "accent-purple": "#9ca3af",
+              "accent-blue": "#6b7280",
+              "text-primary": "#ffffff",
+              "text-secondary": "#9ca3af",
+              border: "#1f2937",
+              "cosmic-purple": "#9ca3af",
+              "cosmic-blue": "#6b7280",
+              "cosmic-pink": "#8b949e",
+              "stellar-gold": "#4b5563",
+              "ice-blue": "#7dd3fc",
+            },
+            fontFamily: {
+              sans: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
+              mono: ["JetBrains Mono", "Fira Code", "monospace"],
+            },
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.6s ease-out",
+              float: "float 6s ease-in-out infinite",
+              orbit: "orbit 20s linear infinite",
+              twinkle: "twinkle 3s ease-in-out infinite",
+              "cosmic-drift": "cosmicDrift 30s linear infinite",
+              "stellar-pulse": "stellarPulse 4s ease-in-out infinite",
+            },
+            boxShadow: {
+              cosmic:
+                "0 0 30px rgba(14, 165, 233, 0.5), 0 0 60px rgba(14, 165, 233, 0.3)",
+              stellar:
+                "0 0 20px rgba(6, 182, 212, 0.4), 0 0 40px rgba(34, 211, 238, 0.3)",
+              nebula:
+                "0 0 40px rgba(34, 211, 238, 0.4), 0 0 80px rgba(6, 182, 212, 0.2)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

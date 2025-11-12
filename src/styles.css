@@ -223,19 +223,20 @@
       .skills-section.animate .skill-bar-container:nth-child(4) { animation-delay: 0.4s; }
       .skills-section.animate .skill-bar-container:nth-child(5) { animation-delay: 0.5s; }
       .skills-section.animate .skill-bar-container:nth-child(6) { animation-delay: 0.6s; }
+      .skills-section.animate .skill-bar-container:nth-child(7) { animation-delay: 0.7s; }
       
-      /* Skill bar width animations */
-      .skills-section.animate .skill-bar[data-width="95%"] { width: 95%; }
-      .skills-section.animate .skill-bar[data-width="90%"] { width: 90%; }
-      .skills-section.animate .skill-bar[data-width="85%"] { width: 85%; }
-      .skills-section.animate .skill-bar[data-width="80%"] { width: 80%; }
-      .skills-section.animate .skill-bar[data-width="75%"] { width: 75%; }
-      .skills-section.animate .skill-bar[data-width="70%"] { width: 70%; }
-      .skills-section.animate .skill-bar[data-width="65%"] { width: 65%; }
-      
+      /* Skill bar width animations - usa attributo data-width direttamente */
       .skills-section.animate .skill-bar {
-        transition-delay: 0.3s;
+        transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
       }
+      
+      .skills-section.animate .skill-bar[data-width="95%"] { width: 95% !important; }
+      .skills-section.animate .skill-bar[data-width="90%"] { width: 90% !important; }
+      .skills-section.animate .skill-bar[data-width="85%"] { width: 85% !important; }
+      .skills-section.animate .skill-bar[data-width="80%"] { width: 80% !important; }
+      .skills-section.animate .skill-bar[data-width="75%"] { width: 75% !important; }
+      .skills-section.animate .skill-bar[data-width="70%"] { width: 70% !important; }
+      .skills-section.animate .skill-bar[data-width="65%"] { width: 65% !important; }
       
       /* Space card effects */
       .space-card {

@@ -1,0 +1,25 @@
+{
+  "name": "muanto.github.io",
+  "version": "1.0.0",
+  "description": "Antonio Murolo personal github page",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.0"
+  },
+  "author": "Antonio Murolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muanto/muanto.github.io/issues"
+  },
+  "homepage": "https://github.com/muanto/muanto.github.io#readme"
+}

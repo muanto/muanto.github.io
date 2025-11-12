@@ -1,0 +1,100 @@
+{
+  "skills": [
+    {
+      "category": "Frontend Development",
+      "icon": "frontend",
+      "items": [
+        {
+          "name": "JavaScript",
+          "level": 95,
+          "gradient": "from-yellow-400 to-yellow-600"
+        },
+        {
+          "name": "React.js",
+          "level": 90,
+          "gradient": "from-cosmic-blue to-cosmic-purple"
+        },
+        {
+          "name": "TypeScript",
+          "level": 85,
+          "gradient": "from-blue-500 to-blue-700"
+        },
+        {
+          "name": "Flutter/Dart",
+          "level": 80,
+          "gradient": "from-blue-400 to-cyan-600"
+        },
+        {
+          "name": "HTML/CSS",
+          "level": 95,
+          "gradient": "from-blue-400 to-blue-600"
+        },
+        {
+          "name": "Next.js",
+          "level": 75,
+          "gradient": "from-accent to-accent-dark"
+        }
+      ]
+    },
+    {
+      "category": "Backend & Database",
+      "icon": "backend",
+      "items": [
+        {
+          "name": "Node.js",
+          "level": 80,
+          "gradient": "from-green-500 to-green-600"
+        },
+        {
+          "name": "PHP",
+          "level": 85,
+          "gradient": "from-green-500 to-green-600"
+        },
+        {
+          "name": "Java",
+          "level": 75,
+          "gradient": "from-green-500 to-green-600"
+        },
+        {
+          "name": "MySQL",
+          "level": 85,
+          "gradient": "from-blue-500 to-blue-600"
+        },
+        {
+          "name": "PostgreSQL",
+          "level": 75,
+          "gradient": "from-blue-500 to-blue-600"
+        },
+        {
+          "name": "MongoDB",
+          "level": 70,
+          "gradient": "from-blue-500 to-blue-600"
+        }
+      ]
+    },
+    {
+      "category": "Tools & Metodologie",
+      "icon": "tools",
+      "items": [
+        {
+          "name": "Git/GitHub",
+          "level": 90,
+          "gradient": "custom",
+          "customGradient": "linear-gradient(to right,#8b5cf6,#6d28d9)"
+        },
+        {
+          "name": "Jira",
+          "level": 75,
+          "gradient": "custom",
+          "customGradient": "linear-gradient(to right,#8b5cf6,#6d28d9)"
+        },
+        {
+          "name": "Agile/Scrum",
+          "level": 85,
+          "gradient": "custom",
+          "customGradient": "linear-gradient(to right,#8b5cf6,#6d28d9)"
+        }
+      ]
+    }
+  ]
+}
