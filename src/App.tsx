@@ -8,7 +8,14 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-primary min-h-screen text-text-primary font-sans relative overflow-x-hidden">
+    <div className="bg-primary min-h-screen text-text-primary font-sans relative overflow-x-hidden" style={{
+      background: `
+        radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0f 0%, #151520 50%, #0a0a0f 100%)
+      `
+    }}>
       {/* Star field layers - simulate body::before and body::after */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0" style={{
         backgroundImage: `

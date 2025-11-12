@@ -58,7 +58,7 @@ const SkillCard: React.FC<{ skillGroup: SkillGroup }> = ({ skillGroup }) => {
         <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
           <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" dangerouslySetInnerHTML={{ __html: iconSvg }} />
         </div>
-        <h3 className="text-xl font-bold text-accent font-sans mb-6">{skillGroup.category}</h3>
+        <h3 className="text-xl font-bold text-accent font-sans">{skillGroup.category}</h3>
       </div>
       <div className="space-y-5">
         {skillGroup.items.map((skill, index) => {

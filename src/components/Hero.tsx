@@ -17,15 +17,13 @@ const Hero: React.FC = () => {
         </h1>
 
         <div className="text-xl md:text-2xl text-ice-blue font-semibold mb-6 animate-slide-up font-mono" style={{ animationDelay: '0.2s' }}>
-         Experienced Software Developer | Front end | Mobile | Full stack
+         Experienced Software Developer<br/> Front end | Mobile | Full stack
         </div>
 
         <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed mb-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
           Sviluppatore software da oltre 20 anni, le mie esperienze vanno dall'automazione industriale allo sviluppo di app web e mobile.
-          Negli ultimi 10 anni mi sono concentrato sulle tecnologie frontend in particolare{' '}
-          <span className="text-cosmic-blue font-semibold">React.js</span> e{' '}
-          <span className="text-cosmic-purple font-semibold">Flutter</span> consolidando una notevole esperienza
-        </p>
+         Negli ultimi 10 anni mi sono concentrato sulle tecnologie frontend in particolare ReactJs e Flutter consolidando una notevole esperienza anche lato backend con Node.js e PHP
+          </p>
 
         <div className="flex flex-wrap justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
           <a
